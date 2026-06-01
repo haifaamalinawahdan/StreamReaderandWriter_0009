@@ -31,5 +31,27 @@ public:
             );
         }
     }
-    const string NAMA_FILE = "gudang.txt";
-};
+};    
+const string NAMA_FILE = "gudang.txt";
+
+// membaca file
+void tampilkanBarang() {
+    ifstream file(NAMA_FILE);
+
+    cout << "\n===== DAFTAR BARANG DI GUDANG =====\n";
+
+    string barang;
+    int nomor = 1;
+    bool kosong = true;
+
+    while (getline(file, barang)) {
+        cout << nomor++ << ". " << barang << endl;
+        kosong = false;
+    }
+
+    if (kosong) {
+        cout << "Gudang masih kosong.\n";
+    }
+
+    file.close();
+}
