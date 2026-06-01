@@ -31,4 +31,5 @@ public:
             );
         }
     }
+    const string NAMA_FILE = "gudang.txt";
 };
