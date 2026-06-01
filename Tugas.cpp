@@ -158,3 +158,34 @@ void hapusBarang() {
 
     cout << "Data berhasil dihapus!\n";
 }
+
+// simulasi etalase
+void simulasiEtalase() {
+    TokoElektronik toko;
+
+    cout << "\n===== SIMULASI ETALASE =====\n";
+
+    // Skenario 1
+    cout << "\nSkenario 1 (Rak indeks 1)\n";
+
+    try {
+        cout << "Barang berhasil diambil: "
+             << toko.ambilProduk(1)
+             << endl;
+    }
+    catch (string pesan) {
+        cout << pesan << endl;
+    }
+
+    // Skenario 2
+    cout << "\nSkenario 2 (Rak indeks 5)\n";
+
+    try {
+        cout << "Barang berhasil diambil: "
+             << toko.ambilProduk(5)
+             << endl;
+    }
+    catch (string pesan) {
+        cout << pesan << endl;
+    }
+}
