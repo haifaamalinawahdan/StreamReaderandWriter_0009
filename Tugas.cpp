@@ -55,3 +55,20 @@ void tampilkanBarang() {
 
     file.close();
 }
+
+// menambah barang
+void tambahBarang() {
+    ofstream file(NAMA_FILE, ios::app);
+
+    string barang;
+
+    cin.ignore();
+    cout << "Masukkan nama barang: ";
+    getline(cin, barang);
+
+    file << barang << endl;
+
+    file.close();
+
+    cout << "Barang berhasil ditambahkan!\n";
+}
