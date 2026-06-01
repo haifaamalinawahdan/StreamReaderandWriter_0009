@@ -18,5 +18,17 @@ public:
         etalase[1] = "Smartphone";
         etalase[2] = "Printer";
     }
-
+    // Mengambil produk berdasarkan nomor rak
+    string ambilProduk(size_t nomorRak) {
+        try {
+            return etalase.at(nomorRak);
+        }
+        catch (const out_of_range&) {
+            throw string(
+                "Gagal Mengambil Barang : Rak nomor " +
+                to_string(nomorRak) +
+                " kosong atau tidak tersedia!"
+            );
+        }
+    }
 };
