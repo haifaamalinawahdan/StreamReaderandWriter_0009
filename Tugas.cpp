@@ -116,3 +116,45 @@ void updateBarang() {
 
     cout << "Data berhasil diperbarui!\n";
 }
+
+// menghapus barang
+void hapusBarang() {
+    ifstream file(NAMA_FILE);
+
+    vector<string> data;
+    string barang;
+
+    while (getline(file, barang)) {
+        data.push_back(barang);
+    }
+
+    file.close();
+
+    if (data.empty()) {
+        cout << "Tidak ada data untuk dihapus.\n";
+        return;
+    }
+
+    tampilkanBarang();
+
+    int nomor;
+    cout << "\nPilih nomor barang yang ingin dihapus: ";
+    cin >> nomor;
+
+    if (nomor < 1 || nomor > data.size()) {
+        cout << "Nomor tidak valid!\n";
+        return;
+    }
+
+    data.erase(data.begin() + (nomor - 1));
+
+    ofstream outFile(NAMA_FILE);
+
+    for (string item : data) {
+        outFile << item << endl;
+    }
+
+    outFile.close();
+
+    cout << "Data berhasil dihapus!\n";
+}
